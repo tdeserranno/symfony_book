@@ -1,0 +1,55 @@
+{#turns off HTML5 form validation#}
+{#{{form(form, {'attr': {'novalidate':'novalidate'} })}}#}
+
+{#{{form(form)}}#}
+
+{#customize form layout but still use some automation by using the form_row helper function#}
+{#{{form_start(form}}{#form start tag#}
+{#    {{form_errors(form)}}{#global form errors, field errors still get rendered next to field in question#}
+{#
+{#    {{form_row(form.task)}}{#renders label, errors and html widget inside a div(default)#}
+{#    {{form_row(form.dueDate)}}
+{#{{form_end(form)}}{#form closing tag + any fields that have not been rendered yet#}
+
+{#customize form layout with each field layout done manually#}
+
+{#custom form theming#}
+{% form_theme form 'AcmeTodoBundle:Form:fields.html.twig'%}
+{#{% form_theme form 'AcmeTodoBundle:Form:fields.html.twig'
+'AcmeTodoBundle:Form:fields2.html.twig'%}#}
+
+{{form_start(form)}}
+    {{form_errors(form)}}
+
+    <div>
+        {#{{form_label(form.task)}}{#auto generated#}
+        {{form_label(form.task, 'Task description')}}{#explicitly specified#}
+        {{form_errors(form.task)}}
+        {#{{form_widget(form.task)}}#}
+        {{form_widget(form.task, {'attr':{'class':'task_field'} } )}}{#additional render options, here add class task_field to html widget#}
+    </div>
+
+    <div>
+        {{form_label(form.dueDate)}}
+        {{form_errors(form.dueDate)}}
+        {{form_widget(form.dueDate)}}
+    </div>
+
+    <h3>Category</h3>
+    <div class="category">
+        {{form_row(form.category.name)}}
+    </div>
+
+    <div>
+        {{form_widget(form.save)}}
+    </div>
+{{form_end(form)}}
+
+{#access to individual values for fields#}
+id={{form.task.vars.id}}{#gets the value of the id attribute#}
+<br>
+name={{form.task.vars.full_name}}{#gets the value of the name attribute#}
+
+{#override form action and method#}
+{#{{ form(form, {'action': path('target_route_name'), 'method': 'GET'}) }}{#passed method and action to form helper function#}
+{#{{ form(form, {'action': path('target_route_name'), 'method': 'GET'}) }}{#passed method and action to form_start helper function#}

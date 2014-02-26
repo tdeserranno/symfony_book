@@ -1,0 +1,13 @@
+{# src/Acme/BlogBundle/Resources/views/Blog/show.html.twig#}
+{%extends '::base.blog.html.twig'%}
+{%block title%}Author validation errors{%endblock%}
+
+{%block content%}
+    <h2>Errors</h2>
+    <p>{#{{errorstring}}#}</p>
+    <ul>
+        {%for error in errors%}
+        <li>{{error}}</li>
+        {%endfor%}
+    </ul>
+{%endblock%}

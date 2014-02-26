@@ -1,0 +1,12 @@
+acme_todo_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AcmeTodoBundle:Default:index }
+acme_todo_new:
+    pattern: /todo/new
+    defaults: { _controller: AcmeTodoBundle:Default:new}
+acme_todo_task_success:
+    pattern: /todo/task_success
+    defaults: { _controller: AcmeTodoBundle:Default:task_success}
+acme_todo_task_new:
+    pattern: /todo/task_add
+    defaults: { _controller: AcmeTodoBundle:Default:task_add}

@@ -1,0 +1,28 @@
+Acme\StoreBundle\Entity\Product:
+    type: entity
+    repositoryClass: Acme\StoreBundle\Entity\ProductRepository
+    table: product
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '100'
+        price:
+            type: decimal
+            scale: 2
+        description:
+            type: text
+    manyToOne:
+        category:
+            targetEntity: Category
+            JoinColumns:
+                category_id:
+                    referencedColumnName: id
+    lifecycleCallbacks: {  }
+    
+    

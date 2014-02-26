@@ -1,0 +1,13 @@
+# Acme/TodoBundle/Resources/config/validation.yml
+Acme\TodoBundle\Entity\Task:
+    properties:
+        task:
+            - NotBlank: ~
+        dueDate:
+            - NotBlank: ~
+            - Type: \DateTime
+
+Acme\TodoBundle\Entity\Category:
+    properties:
+        name:
+            - NotBlank: ~

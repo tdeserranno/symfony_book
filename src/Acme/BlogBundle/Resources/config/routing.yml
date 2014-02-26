@@ -1,0 +1,14 @@
+acme_blog_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AcmeBlogBundle:Default:index }
+blog_author:
+    path: /blog/author
+    defaults: {_controller: AcmeBlogBundle:Blog:author}
+blog:
+    path: /blog/{page}
+    defaults: {_controller: AcmeBlogBundle:Blog:index, page: 1}
+    requirements:
+        page: \d+
+blog_show:
+    path: /blog/{slug}
+    defaults: { _controller: AcmeBlogBundle:Blog:show }

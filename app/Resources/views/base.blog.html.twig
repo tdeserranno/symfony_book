@@ -1,0 +1,17 @@
+{#app/Resources/views/base.blog.html.twig#}
+{% extends '::base.html.twig'%}
+
+{%block body%}
+<div id="sidebar">
+    {%block sidebar%}
+    <ul>
+        <li><a href="/symfony/web/app_dev.php">Home</a></li>
+        <li><a href="/symfony/web/app_dev.php/blog">Blog</a></li>
+    </ul>
+    {%endblock%}
+</div>
+<div id="content">
+    {%block content%}
+    {%endblock%}
+</div>
+{%endblock%}
