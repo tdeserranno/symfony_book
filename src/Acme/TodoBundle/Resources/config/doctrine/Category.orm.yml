@@ -1,6 +1,6 @@
 Acme\TodoBundle\Entity\Category:
     type: entity
-    table: null
+    table: todo_category
     id:
         id:
             type: integer

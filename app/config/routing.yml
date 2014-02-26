@@ -1,3 +1,7 @@
+thomas_bookshop:
+    resource: "@ThomasBookshopBundle/Resources/config/routing.yml"
+    prefix:   /
+
 acme_todo:
     resource: "@AcmeTodoBundle/Resources/config/routing.yml"
     prefix:   /

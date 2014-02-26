@@ -1,6 +1,6 @@
 Acme\TodoBundle\Entity\Task:
     type: entity
-    table: null
+    table: todo_task
     id:
         id:
             type: integer

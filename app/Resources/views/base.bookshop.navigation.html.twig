@@ -1,0 +1,17 @@
+{#app/Resources/views/base.bookshop.navigation.html.twig#}
+{% extends '::base.html.twig'%}
+
+{%block body%}
+<nav id="navigation">
+    {%block navigation%}
+    <ul>
+        <li><a href="{{path('bookshop_homepage')}}">Home</a></li>
+        <li><a href="{{path('bookshop_booklist')}}">Books</a></li>
+    </ul>
+    {%endblock%}
+</nav>
+<div id="content">
+    {%block content%}
+    {%endblock%}
+</div>
+{%endblock%}

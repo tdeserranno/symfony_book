@@ -1,0 +1,6 @@
+bookshop_homepage:
+    pattern:  /bookshop
+    defaults: { _controller: ThomasBookshopBundle:Default:index }
+bookshop_booklist:
+    pattern: /bookshop/booklist
+    defaults: { _controller: ThomasBookshopBundle:Book:list}

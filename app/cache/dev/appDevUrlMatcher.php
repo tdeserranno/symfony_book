@@ -135,6 +135,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/bookshop')) {
+            // bookshop_homepage
+            if ($pathinfo === '/bookshop') {
+                return array (  '_controller' => 'Thomas\\Bundle\\BookshopBundle\\Controller\\DefaultController::indexAction',  '_route' => 'bookshop_homepage',);
+            }
+
+            // bookshop_booklist
+            if ($pathinfo === '/bookshop/booklist') {
+                return array (  '_controller' => 'Thomas\\Bundle\\BookshopBundle\\Controller\\BookController::listAction',  '_route' => 'bookshop_booklist',);
+            }
+
+        }
+
         // acme_todo_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_todo_homepage')), array (  '_controller' => 'Acme\\TodoBundle\\Controller\\DefaultController::indexAction',));

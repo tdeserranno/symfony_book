@@ -1,0 +1,7 @@
+parameters:
+#    thomas_bookshop.example.class: Thomas\Bundle\BookshopBundle\Example
+
+services:
+#    thomas_bookshop.example:
+#        class: %thomas_bookshop.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

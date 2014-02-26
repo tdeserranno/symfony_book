@@ -1,0 +1,10 @@
+{%extends "base.bookshop.navigation.html.twig"%}
+
+{%block content%}
+<h1>List of books</h1>
+<ul>
+    {%for book in books%}
+    <li>{{book.title}}</li>
+    {%endfor%}
+</ul>
+{%endblock%}

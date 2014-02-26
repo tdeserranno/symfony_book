@@ -1,6 +1,6 @@
 Acme\StoreBundle\Entity\Category:
     type: entity
-    table: category
+    table: store_category
     id:
         id:
             type: integer

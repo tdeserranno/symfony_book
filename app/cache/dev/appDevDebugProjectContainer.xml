@@ -21,6 +21,7 @@
       <parameter key="AcmeBlogBundle">Acme\BlogBundle\AcmeBlogBundle</parameter>
       <parameter key="AcmeStoreBundle">Acme\StoreBundle\AcmeStoreBundle</parameter>
       <parameter key="AcmeTodoBundle">Acme\TodoBundle\AcmeTodoBundle</parameter>
+      <parameter key="ThomasBookshopBundle">Thomas\Bundle\BookshopBundle\ThomasBookshopBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -2313,6 +2314,7 @@
               <argument key="AcmeBlogBundle">Acme\BlogBundle\Entity</argument>
               <argument key="AcmeStoreBundle">Acme\StoreBundle\Entity</argument>
               <argument key="AcmeTodoBundle">Acme\TodoBundle\Entity</argument>
+              <argument key="ThomasBookshopBundle">Thomas\Bundle\BookshopBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2352,6 +2354,7 @@
                         <argument key="C:\xampp\htdocs\Symfony\src\Acme\BlogBundle\Resources\config\doctrine">Acme\BlogBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Symfony\src\Acme\StoreBundle\Resources\config\doctrine">Acme\StoreBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Symfony\src\Acme\TodoBundle\Resources\config\doctrine">Acme\TodoBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Symfony\src\Thomas\Bundle\BookshopBundle\Resources\config\doctrine">Thomas\Bundle\BookshopBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2367,6 +2370,7 @@
                         <argument key="C:\xampp\htdocs\Symfony\src\Acme\BlogBundle\Resources\config\doctrine">Acme\BlogBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Symfony\src\Acme\StoreBundle\Resources\config\doctrine">Acme\StoreBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Symfony\src\Acme\TodoBundle\Resources\config\doctrine">Acme\TodoBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Symfony\src\Thomas\Bundle\BookshopBundle\Resources\config\doctrine">Thomas\Bundle\BookshopBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2382,6 +2386,7 @@
                         <argument key="C:\xampp\htdocs\Symfony\src\Acme\BlogBundle\Resources\config\doctrine">Acme\BlogBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Symfony\src\Acme\StoreBundle\Resources\config\doctrine">Acme\StoreBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Symfony\src\Acme\TodoBundle\Resources\config\doctrine">Acme\TodoBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Symfony\src\Thomas\Bundle\BookshopBundle\Resources\config\doctrine">Thomas\Bundle\BookshopBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2389,6 +2394,22 @@
                     </service>
                   </argument>
                   <argument>Acme\TodoBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="C:\xampp\htdocs\Symfony\src\Acme\BlogBundle\Resources\config\doctrine">Acme\BlogBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Symfony\src\Acme\StoreBundle\Resources\config\doctrine">Acme\StoreBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Symfony\src\Acme\TodoBundle\Resources\config\doctrine">Acme\TodoBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Symfony\src\Thomas\Bundle\BookshopBundle\Resources\config\doctrine">Thomas\Bundle\BookshopBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>Thomas\Bundle\BookshopBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -2784,6 +2805,10 @@
       <call method="addPath">
         <argument>C:\xampp\htdocs\Symfony\src\Acme\TodoBundle/Resources/views</argument>
         <argument>AcmeTodo</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\Symfony\src\Thomas\Bundle\BookshopBundle/Resources/views</argument>
+        <argument>ThomasBookshop</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\Symfony\src\Acme\DemoBundle/Resources/views</argument>

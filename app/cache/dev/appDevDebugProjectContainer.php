@@ -626,16 +626,17 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_4de51d99d70cca40dd10ee7527d80ff4a9242109b48c2190a9a041bd153d9994');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Symfony\\src\\Acme\\BlogBundle\\Resources\\config\\doctrine' => 'Acme\\BlogBundle\\Entity', 'C:\\xampp\\htdocs\\Symfony\\src\\Acme\\StoreBundle\\Resources\\config\\doctrine' => 'Acme\\StoreBundle\\Entity', 'C:\\xampp\\htdocs\\Symfony\\src\\Acme\\TodoBundle\\Resources\\config\\doctrine' => 'Acme\\TodoBundle\\Entity'));
+        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Symfony\\src\\Acme\\BlogBundle\\Resources\\config\\doctrine' => 'Acme\\BlogBundle\\Entity', 'C:\\xampp\\htdocs\\Symfony\\src\\Acme\\StoreBundle\\Resources\\config\\doctrine' => 'Acme\\StoreBundle\\Entity', 'C:\\xampp\\htdocs\\Symfony\\src\\Acme\\TodoBundle\\Resources\\config\\doctrine' => 'Acme\\TodoBundle\\Entity', 'C:\\xampp\\htdocs\\Symfony\\src\\Thomas\\Bundle\\BookshopBundle\\Resources\\config\\doctrine' => 'Thomas\\Bundle\\BookshopBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
         $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
         $e->addDriver($d, 'Acme\\BlogBundle\\Entity');
         $e->addDriver($d, 'Acme\\StoreBundle\\Entity');
         $e->addDriver($d, 'Acme\\TodoBundle\\Entity');
+        $e->addDriver($d, 'Thomas\\Bundle\\BookshopBundle\\Entity');
 
         $f = new \Doctrine\ORM\Configuration();
-        $f->setEntityNamespaces(array('AcmeBlogBundle' => 'Acme\\BlogBundle\\Entity', 'AcmeStoreBundle' => 'Acme\\StoreBundle\\Entity', 'AcmeTodoBundle' => 'Acme\\TodoBundle\\Entity'));
+        $f->setEntityNamespaces(array('AcmeBlogBundle' => 'Acme\\BlogBundle\\Entity', 'AcmeStoreBundle' => 'Acme\\StoreBundle\\Entity', 'AcmeTodoBundle' => 'Acme\\TodoBundle\\Entity', 'ThomasBookshopBundle' => 'Thomas\\Bundle\\BookshopBundle\\Entity'));
         $f->setMetadataCacheImpl($a);
         $f->setQueryCacheImpl($b);
         $f->setResultCacheImpl($c);
@@ -2971,6 +2972,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('C:\\xampp\\htdocs\\Symfony\\src\\Acme\\BlogBundle/Resources/views', 'AcmeBlog');
         $instance->addPath('C:\\xampp\\htdocs\\Symfony\\src\\Acme\\StoreBundle/Resources/views', 'AcmeStore');
         $instance->addPath('C:\\xampp\\htdocs\\Symfony\\src\\Acme\\TodoBundle/Resources/views', 'AcmeTodo');
+        $instance->addPath('C:\\xampp\\htdocs\\Symfony\\src\\Thomas\\Bundle\\BookshopBundle/Resources/views', 'ThomasBookshop');
         $instance->addPath('C:\\xampp\\htdocs\\Symfony\\src\\Acme\\DemoBundle/Resources/views', 'AcmeDemo');
         $instance->addPath('C:\\xampp\\htdocs\\Symfony\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('C:\\xampp\\htdocs\\Symfony\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views', 'SensioDistribution');
@@ -3460,6 +3462,7 @@ class appDevDebugProjectContainer extends Container
                 'AcmeBlogBundle' => 'Acme\\BlogBundle\\AcmeBlogBundle',
                 'AcmeStoreBundle' => 'Acme\\StoreBundle\\AcmeStoreBundle',
                 'AcmeTodoBundle' => 'Acme\\TodoBundle\\AcmeTodoBundle',
+                'ThomasBookshopBundle' => 'Thomas\\Bundle\\BookshopBundle\\ThomasBookshopBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
